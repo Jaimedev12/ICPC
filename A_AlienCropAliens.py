@@ -1,7 +1,3 @@
-
-
-
-
 import math
 
 listaMasaxBolsa = []
