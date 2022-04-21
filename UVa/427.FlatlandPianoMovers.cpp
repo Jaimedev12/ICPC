@@ -6,6 +6,7 @@
 #include <algorithm>
 using namespace std;
 // http://www.cnblogs.com/newpanderking/archive/2011/08/25/2153777.html
+
 const double pi = acos(-1);
 #define eps 1e-6 
 
@@ -17,8 +18,10 @@ double ternary_search(double H, double W, double X, double Y) {
     while(fabs(l - r) > eps) {
         mid = (l + r) /2;
         midmid = (mid + r) /2;
+        
         s1 = H * cos(mid) + W * sin(mid) - X;
         h1 = s1 * tan(mid) + W * cos(mid);
+        
         s2 = H * cos(midmid) + W * sin(midmid) - X;
         h2 = s2 * tan(midmid) + W * cos(midmid);
         
@@ -36,21 +39,31 @@ int main() {
     
     while(gets(line)) {
         stringstream piano(line);
-        string token;
+        string dimensionesPiano;
+        string dimensionesPasillo;
         
-        piano >> token;
+        piano >> dimensionesPiano;
         
         double H, W, X, Y;
         
-        sscanf(token.c_str(), "%lf,%lf", &H, &W);
+        sscanf(dimensionesPiano.c_str(), "%lf,%lf", &H, &W);
         
         if(H < W)
             swap(H, W);
             
-        while(piano >> token) {
-            sscanf(token.c_str(), "%lf,%lf", &X, &Y);
+        while(piano >> dimensionesPasillo) {
+            sscanf(dimensionesPasillo.c_str(), "%lf,%lf", &X, &Y);
             double h = ternary_search(H, W, X, Y);
+            
             printf("%c", h <= Y ? 'Y' : 'N');
+            /*
+            if (h <= Y){
+                cout << "Y";
+            } else {
+                cout << "N";
+            }
+            */
+            
         }
         
         cout << "\n";
