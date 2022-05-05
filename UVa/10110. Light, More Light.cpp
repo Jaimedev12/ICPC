@@ -18,7 +18,9 @@ int main() {
       break;
     }
     
-    rest = sqrt(input);    
+    rest = sqrt(input);
+
+    cout << rest << endl;
     
     if (rest == (int)rest){
       evenFactors = true;
@@ -27,9 +29,9 @@ int main() {
     }
 
     if(evenFactors){
-      cout << "no" << "\n";
-    } else {
       cout << "yes" << "\n";
+    } else {
+      cout << "no" << "\n";
     }
     
   }
