@@ -6,8 +6,8 @@ using namespace std;
 
 int main() {
 
-  int input;
-  double rest;
+  long long int input;
+  float rest;
   bool isPerfect; // Determines if perfect square
   bool evenFactors; // Determines if even number of factors
   
@@ -18,6 +18,8 @@ int main() {
     }
     
     rest = sqrt(input);
+
+    
     
     if (rest == (int)rest){
       evenFactors = true;
