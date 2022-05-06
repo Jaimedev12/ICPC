@@ -1,14 +1,17 @@
 #include <iostream>
-#include <string>
 #include <cmath>
 #include <cstdio>
+#include <vector>
+#include <string>
 
 using namespace std;
 
 int main() {
 
   int input;
-  float rest;
+  vector<string> outputs;
+  string output;
+  float rest = 3;
   bool isPerfect; // Determines if perfect square
   bool evenFactors; // Determines if even number of factors
   
@@ -19,8 +22,6 @@ int main() {
     }
     
     rest = sqrt(input);
-
-    cout << rest << endl;
     
     if (rest == (int)rest){
       evenFactors = true;
@@ -29,11 +30,15 @@ int main() {
     }
 
     if(evenFactors){
-      cout << "yes" << "\n";
+      outputs.push_back("yes\n");
     } else {
-      cout << "no" << "\n";
+      outputs.push_back("no\n");
     }
     
+  }
+
+  for(int i = 0; i < outputs.size(); i++){
+    cout << outputs[i];
   }
   
 }
