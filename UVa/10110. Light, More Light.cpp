@@ -7,11 +7,9 @@ using namespace std;
 int main() {
 
   long long int input;
-  float rest;
-  bool isPerfect; // Determines if perfect square
-  bool evenFactors; // Determines if even number of factors
+  double rest;
   
-  while (scanf("%d", &input)){
+  while (scanf("%lld", &input)){
 
     if(input == 0){
       break;
@@ -19,20 +17,7 @@ int main() {
     
     rest = sqrt(input);
 
-    
-    
-    if (rest == (int)rest){
-      evenFactors = true;
-    } else {
-      evenFactors = false;
-    }
-
-    if(evenFactors){
-      cout << "yes\n";
-    } else {
-      cout << "no\n";
-    }
-    
+    cout << (rest == round(rest) ? "yes\n":"no\n");
   }
-  
+  return 0;
 }
