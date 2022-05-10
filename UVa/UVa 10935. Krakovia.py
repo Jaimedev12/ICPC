@@ -12,5 +12,5 @@ while True:
   for _ in range(N):
     sum += int(inputs[ln])
     ln += 1
-  print("Bill #%d costs $d: each friend should pay %d\n" % (caseNo, sum, sum/F))
+  print("Bill #%d costs $d: each friend should pay %d\n" % (caseNo, sum, sum//F))
   caseNo += 1
