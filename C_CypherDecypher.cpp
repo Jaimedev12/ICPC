@@ -38,9 +38,14 @@ int main() {
     cin >> i >> j;
     cnt = 0;
 
-    for (int jindex = 0; jindex < primes.size(); jindex++){
+    for (int jindex = 0; jindex < primes.size(); jindex++){    
       if (primes[jindex] >= i && primes[jindex] <= j){
         cnt++;
+
+        if (primes[jindex] > j){
+          break;
+        }
+        
       }
     }
     cout << cnt << "\n";
