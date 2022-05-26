@@ -5,7 +5,8 @@
 using namespace std;
 
 lli c = (pow(10, 9)+7);
-lli result[1000000] = {0};
+
+lli result[1000100] = {};
 lli factorial(int n)
 {
     if (n >= 0) 
@@ -41,8 +42,8 @@ int main() {
       almacen += (combinations(K, K-i)) * (((int) pow(K-i, N))%c) * (((int) pow(-1, K+1-i))%c);
     }
   }
-
-  cout << combinations(M, K) * almacen << "\n";
+  
+  cout << (combinations(M, K) * almacen)%c << "\n";
   
   
   
